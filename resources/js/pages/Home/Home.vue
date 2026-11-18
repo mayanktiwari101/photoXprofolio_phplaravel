@@ -8,59 +8,66 @@
       background-repeat: no-repeat;
       background-position: center;
     " id="#head">
-    <nav class="navbar navbar-expand-md fixed-top nav-menu">
-      <a href="#" class="navbar-brand font-weight-bold text-uppercase text-white">
-        <span class="h2 font-weight bold">photo</span>
-        <span class="h1">X</span>
-      </a>
-      <button class="navbar-toggler collapse navbar-button" type="button" data-target="#navbarContent"
-        data-toggle="collapse">
-        <div class="bg-light line1"></div>
-        <div class="bg-light line2"></div>
-        <div class="bg-light line3"></div>
-      </button>
-      <div class="navbar-collpase collapse justify-content-end" id="navbarContent">
-        <ul class="navbar-nav text-light text-capitalize">
-          <li class="nav-item">
-            <a href="#home" class="nav-link menu-item m-2 nav-active"> home </a>
-          </li>
-          <li class="nav-item">
-            <a href="#mission" class="nav-link menu-item m-2 nav-active">
-              mission
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#collection" class="nav-link menu-item m-2">
-              collection
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#gallery" class="nav-link menu-item m-2"> gallery </a>
-          </li>
-          <li class="nav-item">
-            <a href="#customerReview" class="nav-link menu-item m-2">
-              customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#pricing" class="nav-link menu-item m-2"> pricing </a>
-          </li>
-        </ul>
-      </div>
+            <nav class="navbar navbar-expand-md fixed-top nav-menu">
+        <a href="#" class="navbar-brand font-weight-bold text-uppercase">
+            <span class="h2 font-weight-bold">photo</span>
+            <span class="h1">x</span>
+        </a>
+        <button class="navbar-toggler navbar-button" type="button" data-target="#navbarContent" data-toggle="collapse">
+            <div class="bg-light line1"></div>
+            <div class="bg-light line2"></div>
+            <div class="bg-light line3"></div>
+        </button>
+
+        <div class="navbar-collapse collapse justify-content-end" id="navbarContent">
+            <ul class="navbar-nav text-light text-capitalize">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link menu-item m-2 nav-active">
+                        home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#mission" class="nav-link menu-item m-2">
+                        mission
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#collection" class="nav-link menu-item m-2">
+                        collection
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#collection" class="nav-link menu-item m-2">
+                        gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#customerReview" class="nav-link menu-item m-2">
+                        customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link menu-item m-2">
+                        pricing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link menu-item m-2">
+                        contacts
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="text-light text-center text-md-right banner">
-      <h1 class="display-4 banner-heading">
-        Welecome to
+        <h1 class="display-4 banner-heading">Welcome to
         <span class="text-uppercase">photo</span>
-        <span class="display-3">x</span>
-      </h1>
-      <p class="lead banner-par">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad vitae eum
-        cupiditate blanditiis hic deleniti quis, a officia explicabo, aperiam,
-        quas quo. Illum sint neque in, nisi libero sed autem?
-      </p>
+        <span class="display-3">x</span></h1>
+        <p class="lead banner-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quam possimus impedit, tempora quia atque nisi placeat fuga aliquam? Odio, quae quibusdam sed voluptates ad amet. Dolore natus laudantium ad!</p>
     </div>
-  </header>
+
+    </header>            
+
   <section class="p-5 mission" id="mission">
     <div class="container-fluid">
       <div class="row text-white">
@@ -103,6 +110,19 @@
             minima aliquid, pariatur accusamus delectus quam reprehenderit nulla optio vitae consequuntur facere maiores
             quis doloremque.
           </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 text-center">
+                <img src="../../../../public/images/prop1.png" width="350" class="img-fluid camera-img">
+            </div>
+            <div class="col-lg-7 text-white text-lg-right text-center mission-text">
+                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tenetur maiores ea. Eos quam provident numquam minus quia voluptatem ea accusantium fugiat ipsa reprehenderit! Quasi iusto iste recusandae assumenda dolorem?
+                </p>
+            </div>
         </div>
       </div>
     </div>
@@ -515,6 +535,30 @@
 
 <script setup>
 import collectionProp1 from '../../../../public/images/collectionProp1.jpg';
+import { onMounted, onUnmounted } from 'vue';
+
+
+onMounted(() => {
+    $(document).ready(function () {
+        console.log("this is happening");
+    })
+
+    $(window).scroll(function () {
+        let position = $(this).scrollTop();
+        if (position >= 650) {
+            $('.camera-img').addClass('fromLeft');
+            $('.mission-text').addClass('fromRight');
+        } else {
+            $('.camera-img').removeClass('fromLeft');
+            $('.mission-text').removeClass('fromRight');
+        }
+    });
+
+
+
+});
+
+
 </script>
 
 <style scoped>

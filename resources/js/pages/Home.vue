@@ -1,3 +1,10 @@
+<script setup>
+
+  
+
+</script>
+
+
 <template>
   <Head title="Login" />
   <div class="flex items-center justify-center p-6 min-h-screen bg-indigo-800">

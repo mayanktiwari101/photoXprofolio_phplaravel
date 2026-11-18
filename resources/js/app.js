@@ -1,6 +1,8 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import $ from 'jquery';
+window.$ = window.jquery = $;
 import { createApp, h } from 'vue';
 
 import { createInertiaApp } from '@inertiajs/vue3';
